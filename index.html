@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBN Website</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        .navbar {
+            background-color: #DAEBE3 !important;
+            
+        }
+        #map {
+            width: 80%;
+            height: 500px;
+        }
+    </style>
+    <style>
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+          background-color: black;
+      }
+  </style>
+</head>
+
+<body class="mainbody">
+    <!-- Header -->
+    <header>
+      <div class="rowdiv">
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="../assets/hbn.png" height="100px" width="auto">
+            <h2 class="logotext">HONEYBEE <br> NETWORK</h2>
+          </div>
+          <div>
+              <img src="../assets/sristi.png" height="100px" width="auto">
+              <img src="../assets/gian.png" height="100px" width="auto" style="margin-left: 25px;">
+          </div>
+      </div>
+      
+      <nav style="background-color: #DAEBE3;" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="./pages/aboutus.html">About Us</a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="./pages/innovators.html">Innovators</a>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Activities
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="./pages/activities/competitions.html">Competitions</a></li>
+                              <li><a class="dropdown-item" href="./pages/activities/shodhyatra.php">Shodhyatra</a></li>
+                          </ul>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Resources
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="./pages/resources/hbn-publishedPractices.html">Honeybee Published Practices</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/hbn-innovations.html">Honeybee Innovations</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/hbn-lowcostPractices.html">Honeybee Lowcost Practices</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/medicalPlant.html">Medicinal Pant Database</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/SRISTI-library.html">SRISTI Library</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/seekingSolutions.html">Seeking Solutions</a></li>
+                              <li><a class="dropdown-item" href="./pages/resources/augmentInnovators.html">Augment Innovators</a></li>
+                          </ul>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link" href="./pages/contact.html">Contact Us</a>
+                      </li>
+
+                  </ul>
+
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #DAEBE3; margin-right: 20px; color: black; padding-left: 15px; padding-right: 15px; border-width: 2px;">
+                        English
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Hindi</a></li>
+                        <li><a class="dropdown-item" href="#">Gujrathi</a></li>
+                        <li><a class="dropdown-item" href="#">Tamil</a></li>
+                      </ul>
+                  </div>
+
+                  <button class="joinbutton" style="margin-right: 20px;" onclick="window.location.href='./pages/joinus.php'">Join Us!</button>
+
+                  <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+
+              </div>
+          </div>
+      </nav>
+    </header>
+
+
+    <main>
+      <!-- Intro(Farmer Content) -->
+      <div class="farmer">
+            <div class="farmer-content">
+                <h1 class="heading">INNOVATIONS <br>FOR AND FROM<br> GRASSROOTS</h1>
+                <p class="para">We aim to create an international network of grassroots innovators, gathering and spreading traditional knowledge while giving the innovators the acknowledgement they deserve. </p>
+                <button class="joinbutton" style="padding-top: 10px; padding-bottom: 10px; padding-right: 50px; padding-left: 50px;" onclick="window.location.href='./pages/joinus.php'"> Join Us!</button>
+                <button class="readmore" onclick="window.location.href='./pages/aboutus.html'"> Read More!</button>
+            </div>
+      </div>
+
+      <!-- Latest and Upcoming Events -->
+      <div class="rowdiv" style="padding-top: 40px;">
+            <div style="width: 45%;">
+                <h2 class="subheading" style="margin-bottom: 20px;">LATEST EVENTS</h2>
+                <div id="carouselExampleRide" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="450px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Last Shodhyatra</h5>
+                          <p>A yatra was organized in Nagaur in summer this year. In which more than 40 explorers from all over the country
+                            Was involved in the expedition..</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="450px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="450px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+            <div style="width: 45%;">
+                <h2 class="subheading" style="margin-bottom: 20px;">UPCOMING EVENTS</h2>
+                <div id="carouselExampleRide2" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleRide2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleRide2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleRide2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="450px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Shodhyatra</h5>
+                          <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="440px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./assets/car.jpg" class="d-block w-100" height="440px" width="auto" style="opacity: 80%;">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide2" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide2" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+      </div>
+
+      <br>
+      <center><hr style="color: #2E2E2E; width: 80%;"></center>
+      <br>
+
+      <!-- Impact & Map -->
+      <div>
+        <div style="padding-left: 40px; margin-top: -10px;">
+            <h2 class="subheading">OUR IMPACT</h2>
+        </div>
+        <br>
+        <div class="rowdiv2" style="margin-top: -10px;">
+            <div class="impactbox">
+                <h2 class="heading2">1,00,000+</h2>
+                <p class="subheading2">DOCUMENTATIONS</p>
+            </div>
+            <div class="impactbox">
+                <h2 class="heading2">2,000+</h2>
+                <p class="subheading2">VOLUNTEERS</p>
+            </div>
+            <div class="impactbox">
+                <h2 class="heading2">91+</h2>
+                <p class="subheading2">COUNTRIES</p>
+            </div>
+        </div>
+        <br>
+        <!-- map -->
+        <center><div id="map"></div></center>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            var map = L.map('map', {
+              center: [20, 0],
+              zoom: 2,
+              zoomControl: false,
+              dragging: false,
+              scrollWheelZoom: false,
+              doubleClickZoom: false,
+              boxZoom: false,
+              touchZoom: false
+            });
+    
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            var marker = L.marker([13.0843, 80.2705]).addTo(map)
+                .bindPopup('<b>Chennai, Tamil Nadu</b><br />HBN office established in ___').openPopup();
+            
+            var marker2 = L.marker([23.0225, 72.5714]).addTo(map)
+                .bindPopup('<b>Ahmedabad, Gujarat</b><br />HBN office established in ___');
+        </script>
+      </div>
+
+      <br>
+      <center><hr style="color: #2E2E2E; width: 80%;"></center>
+      <br>
+
+      <!-- Innovators -->
+      <div style="padding-left: 40px; padding-right: 40px;">
+            <h2 class="subheading">OUR INNOVATORS</h2>
+            <div class="rowdiv3">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+              <img src="./assets/innovator.png" width="23%" height="auto">
+            </div>
+            <a class="readmore2" href="./pages/innovators.html">Read more →</a>
+      </div>
+        
+      <br>
+      <center><hr style="color: #2E2E2E; width: 80%;"></center>
+      <br>
+
+      <!-- Resources -->
+      <div style="padding-right: 40px; padding-left: 40px;">
+            <h2 class="subheading">OUR RESOURCES</h2>
+
+            <div class="rowdiv4">
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">HONEYBEE PUBLISHED PRACTICES</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/hbn-publishedPractices.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">HONEYBEE INNOVATIONS</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/hbn-innovations.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">HONEYBEE LOW COST PRACTICES</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/hbn-lowcostPractices.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">MEDICINAL PLANT DATABASE</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/medicalPlant.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">SRISTI LIBRARY DATABASE</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/SRISTI-library.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block; margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">SEEKING SOLUTIONS</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/seekingSolutions.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+              <div class="card" style="width: 23%; align-content: center; text-align: center; display: inline-block;margin-bottom: 20px;">
+                <img src="./assets/53618027381_8ed58c27a8_k.jpg" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title" id="subheadingsmall">AUGMENT INNOVATORS</h5>
+                  <p class="card-text" id="para2">Traditional knowledge that has been recognised and published.</p>
+                  <a href="./pages/resources/augmentInnovators.html" class="btn btn-primary" id="readmore">Go to database!</a>
+                </div>
+              </div>
+            </div>
+      </div>
+
+      <br>
+      <center><hr style="color: #2E2E2E; width: 80%;"></center>
+      <br>
+
+      <!-- Newsletter -->
+      <div>
+        <center><img src="./assets/bee.png" width="100px" height="100px"></center>
+        <center><h1 class="heading3">Subscribe to our newsletter!</h1></center>
+
+        <div style="padding-left: 40px; padding-right: 40px;">
+          <div class="rowdiv4">
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/hbn-english.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">HONEYBEE-ENGLISH</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/hbn-gujarati.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">LOKSARVANI-GUJARATI</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/bhn-hindi.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">SUJHBHUJ-HINDI</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/hbn-telugu.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">PALLE SRUJANA-TELUGU</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/hbn-tamil.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">NUM VALI VELANMAI-TAMIL</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18%; align-content: center; text-align: center; display: inline-block;">
+              <img src="./assets/newsletter-covers/hbn-chinese.jpg" class="card-img-top" style="width: 50%; height: auto; margin-top: 10px;">
+              <div class="card-body">
+                <h5 class="card-title" id="subheadingsmall">HONEYBEE-CHINESE</h5>
+                <a href="#" class="btn btn-primary" id="readmore">Preview</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <center><button class="joinbutton" style="margin-top: 20px; margin-bottom: 20px; padding-top: 10px; padding-bottom: 10px; padding-right: 50px; padding-left: 50px;" onclick="window.location.href='./pages/newsletter.php'">Be a Honeybee Reader!</button></center>
+      </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="mainfooter">
+      <div class="footer">
+        <div>
+          <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+            <img src="./assets/hbn2.png" height="100px" width="auto">
+            <h2 class="logotext2">HONEYBEE <br> NETWORK</h2>
+          </div>
+          <p class="para2">
+            Empowering Innovation through Traditional Knowledge
+          </p>
+          <br>
+          <center>
+          <div class="social-buttons">
+            <a href="#" class="social-button" title="Facebook">
+                <img src="./assets/social/fb.png" width="100%" height="auto">
+            </a>
+            <a href="#" class="social-button" title="Twitter">
+              <img src="./assets/social/tw.png" width="100%" height="auto">
+            </a>
+            <a href="#" class="social-button" title="LinkedIn">
+              <img src="./assets/social/ln.png" width="100%" height="auto">
+            </a>
+            <a href="#" class="social-button" title="YouTube">
+                <img src="./assets/social/yt.png" width="100%" height="auto">
+            </a>
+          </div>
+          </center>
+        </div>
+
+        <div>
+          <h3 class="subheadingsmall2">Navigation</h3>
+          <br>
+          <h5><a class="footerlist" href="#"><b> Home</b></a></h5>
+          <h5><a class="footerlist" href="./pages/aboutus.html">About Us</a></h5>
+          <h5><a class="footerlist" href="./pages/innovators.html">Innovators</a></h5>
+          <h5><a class="footerlist" href="./pages/activities/competitions.html">Competitons</a></h5>
+          <h5><a class="footerlist" href="./pages/activities/shodhyatra.php">Shodhyatra</a></h5>
+          <h5><a class="footerlist" href="./pages/contact.html">Contact Us</a></h5>
+        </div>
+
+        <div>
+          <h3 class="subheadingsmall2">Actions</h3>
+          <br>
+          <h5><a class="footerlist" href="./pages/joinus.php">Get involved</a></h5>
+          <br>
+          <h5><a class="footerlist" href="./pages/newsletter.php">Subscribe to our Newsletter</a></h5>
+          <br>
+        </div>
+
+        <div>
+          <h3 class="subheadingsmall">PARTNERS</h3>
+          <br>
+          <center>
+            <div style="display: flex; gap: 40px; align-content: center; align-items: center; margin-left: -80px;">
+              <img src="./assets/sristi.png" height="100px" width="auto">
+              <img src="./assets/gian2.png" height="100px" width="auto">
+            </div>
+          </center>
+        </div>
+      </div>
+      <br>
+      <hr style="color: white;">
+      <br>
+      <center><p class="tnc">Copyright © 2024 Honey Bee Network. | All Rights Reserved | <a href="#" class="tnc2">Terms and Conditions</a> | <a href="#" class="tnc2">Privacy Policy</a></p></center>
+    </footer>
+        
+</body>
+</html>
